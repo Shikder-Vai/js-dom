@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+    <h1>Let's Exploring js dom(Docoment Object Model)</h1>
+    </header>
+    
+    <main>
+        <header id="blog-list">
+            <ul id="list">
+                <li>list-1</li>
+                <li>list-2</li>
+                <li>list-3</li>
+            </ul>
+        </header>      
+        <article>
+            <h1 class="titles">this is article no -1</h1>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim maiores tempora fugit omnis quos autem quas doloribus, excepturi quo, commodi, sit cupiditate! Officia tempore sit ab alias voluptatem eveniet odit.</p>
+        </article>
+        <article>
+            <h1 class="titles">this is article no -2</h1>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est tenetur itaque obcaecati non asperiores veniam et quidem saepe repudiandae sunt eveniet, nihil doloribus neque cupiditate quaerat! Fugit ut quis atque.</p>
+        </article>
+        <article>
+            <h1 id="thard-title" class="titles">this is article no -3</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea totam a, impedit alias nihil vitae maxime, voluptas repudiandae quas architecto sapiente? Aspernatur ducimus ullam laboriosam nostrum consequatur minima nobis itaque?</p>
+        </article>
+        <article>
+            <h1 id="forth-title" class="titles">this is article no -4</h1>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. A exercitationem unde nisi, quo, eveniet sunt officiis tempore culpa debitis ipsum beatae saepe alias reprehenderit aut molestias vitae accusamus reiciendis laboriosam.</p>
+        </article>
+    </main>
+    <script>
+        //add element to html by js
+        //1. creat an eliment
+        const li = document.createElement('li')
+        //write element text
+        li.innerText = 'list-4';
+        //find perent element
+        const ul = document.getElementById('list')
+        //set element
+        ul.appendChild(li);
+
+        //add another element by js
+        const h2 =document.createElement('h2')
+        //write eliment text
+        h2.innerText = 'Blogs list Lekhlam';
+        //find perenst
+        const updateAnElement = document.getElementById('blog-list');
+        //set element
+        updateAnElement.appendChild(h2);
+
+
+
+
+        const allTitle = document.getElementsByClassName('titles')
+        for(const title of allTitle){
+            title.style.color = 'red';
+            title.style.border = '5px solid yellow';
+            title.style.borderRadius = '10px'
+            title.style.margin = '50px'
+            title.style.padding = '10px'
+        }
+        const allAirticle = document.getElementsByTagName('p')
+        for(const airticle of allAirticle){
+            airticle.style.border ='5px solid blue'
+            airticle.style.borderRadius = '10px'
+            airticle.style.margin = '50px'
+            airticle.style.padding = '10px'
+        }
+    </script>
+</body>
+</html>
